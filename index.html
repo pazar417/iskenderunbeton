@@ -33,18 +33,26 @@
 
             <div class="customizations">
                 <h2>Özelleştirme</h2>
-                <label>
-                    <input type="checkbox" id="extraMeat"> Bol Etli
+                <label class="main-option">
+                    <input type="checkbox" id="everythingExtra" checked> Herşeyi Bol
                 </label>
-                <label>
-                    <input type="checkbox" id="noOnion"> Soğansız
-                </label>
-                <label>
-                    <input type="checkbox" id="extraBread"> Bol Ekmekli
-                </label>
-                <label>
-                    <input type="checkbox" id="lessBread"> Az Ekmekli
-                </label>
+                <div id="otherOptions" class="other-options hidden">
+                    <label>
+                        <input type="checkbox" id="noOnion"> Soğansız
+                    </label>
+                    <label>
+                        <input type="checkbox" id="lessBread"> Az Ekmekli
+                    </label>
+                    <label>
+                        <input type="checkbox" id="extraBread"> Bol Ekmekli
+                    </label>
+                    <label>
+                        <input type="checkbox" id="extraSauce"> Bol Soslu
+                    </label>
+                    <label>
+                        <input type="checkbox" id="halfPortion"> Yarım Döner
+                    </label>
+                </div>
             </div>
 
             <div class="order-notes">
@@ -65,6 +73,12 @@
             <div id="ordersList"></div>
             <div class="orders-summary">
                 <p>Toplam Sipariş: <span id="totalOrders">0</span></p>
+            </div>
+            <div class="share-controls">
+                <button id="shareWhatsApp" class="whatsapp-btn">
+                    <img src="images/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon">
+                    WhatsApp'ta Paylaş
+                </button>
             </div>
         </div>
     </div>

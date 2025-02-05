@@ -85,8 +85,44 @@ button:hover {
 }
 
 .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #eee;
     padding: 10px 0;
+}
+
+.order-content {
+    flex-grow: 1;
+}
+
+.order-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.order-controls button {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 14px;
+    margin: 0;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.edit-quantity {
+    width: 60px;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .order-item:last-child {
@@ -161,6 +197,76 @@ button:hover {
 input[type="radio"]:checked + .doner-card {
     border-color: #4CAF50;
     background-color: #f8fff8;
+}
+
+.main-option {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f8fff8;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+}
+
+.main-option input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.other-options {
+    padding-left: 10px;
+    border-left: 2px solid #eee;
+}
+
+.other-options.hidden {
+    display: none;
+}
+
+.order-type-summary {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8fff8;
+    border-radius: 4px;
+    border: 1px solid #4CAF50;
+}
+
+.order-type-count {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.order-type-count span {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.order-type-count.total {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #4CAF50;
+}
+
+.share-controls {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #4774f0;
+    color: white;
+    font-weight: bold;
+}
+
+.whatsapp-btn:hover {
+    background-color: #0bd5f0;
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
 }
 
 @media (max-width: 480px) {
