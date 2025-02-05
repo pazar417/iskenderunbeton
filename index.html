@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğle Yemeği Siparişi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Öğle Yemeği Siparişi</h1>
+        
+        <form id="orderForm">
+            <div class="menu-item">
+                <h2>Döner Seçimi</h2>
+                <div class="doner-selection">
+                    <div class="doner-option">
+                        <input type="radio" id="et" name="donerType" value="et" required>
+                        <label for="et" class="doner-card">
+                            <img src="images/et-doner.jpg" alt="Et Döner">
+                            <span class="doner-name">Et Döner</span>
+                            <span class="price">70 ₺</span>
+                        </label>
+                    </div>
+                    <div class="doner-option">
+                        <input type="radio" id="tavuk" name="donerType" value="tavuk">
+                        <label for="tavuk" class="doner-card">
+                            <img src="images/tavuk-doner.jpg" alt="Tavuk Döner">
+                            <span class="doner-name">Tavuk Döner</span>
+                            <span class="price">55 ₺</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customizations">
+                <h2>Özelleştirme</h2>
+                <label>
+                    <input type="checkbox" id="extraMeat"> Bol Etli
+                </label>
+                <label>
+                    <input type="checkbox" id="noOnion"> Soğansız
+                </label>
+                <label>
+                    <input type="checkbox" id="extraBread"> Bol Ekmekli
+                </label>
+                <label>
+                    <input type="checkbox" id="lessBread"> Az Ekmekli
+                </label>
+            </div>
+
+            <div class="order-notes">
+                <h2>Sipariş Notu</h2>
+                <textarea id="notes" placeholder="Ekstra notlarınız..."></textarea>
+            </div>
+
+            <button type="submit">Ekle</button>
+        </form>
+
+        <div id="orderSummary" class="summary hidden">
+            <h2>Sipariş Özeti</h2>
+            <div id="summaryContent"></div>
+        </div>
+
+        <div class="orders-list">
+            <h2>Tüm Siparişler</h2>
+            <div id="ordersList"></div>
+            <div class="orders-summary">
+                <p>Toplam Sipariş: <span id="totalOrders">0</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
