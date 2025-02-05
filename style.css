@@ -269,6 +269,30 @@ input[type="radio"]:checked + .doner-card {
     height: 24px;
 }
 
+.bread-options {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.bread-options .option-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #666;
+}
+
+.bread-options label {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.bread-options input[type="radio"] {
+    margin-right: 5px;
+}
+
 @media (max-width: 480px) {
     .container {
         padding: 10px;

@@ -40,12 +40,18 @@
                     <label>
                         <input type="checkbox" id="noOnion"> Soğansız
                     </label>
-                    <label>
-                        <input type="checkbox" id="lessBread"> Az Ekmekli
-                    </label>
-                    <label>
-                        <input type="checkbox" id="extraBread"> Bol Ekmekli
-                    </label>
+                    <div class="bread-options">
+                        <span class="option-label">Ekmek Miktarı:</span>
+                        <label>
+                            <input type="radio" name="breadAmount" id="normalBread" value="normal" checked> Normal
+                        </label>
+                        <label>
+                            <input type="radio" name="breadAmount" id="lessBread" value="less"> Az Ekmekli
+                        </label>
+                        <label>
+                            <input type="radio" name="breadAmount" id="extraBread" value="extra"> Bol Ekmekli
+                        </label>
+                    </div>
                     <label>
                         <input type="checkbox" id="extraSauce"> Bol Soslu
                     </label>

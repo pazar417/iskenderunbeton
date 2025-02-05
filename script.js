@@ -18,8 +18,7 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
     const donerType = document.querySelector('input[name="donerType"]:checked').value;
     const everythingExtra = document.getElementById('everythingExtra').checked;
     const noOnion = document.getElementById('noOnion').checked;
-    const lessBread = document.getElementById('lessBread').checked;
-    const extraBread = document.getElementById('extraBread').checked;
+    const breadAmount = document.querySelector('input[name="breadAmount"]:checked').value;
     const extraSauce = document.getElementById('extraSauce').checked;
     const halfPortion = document.getElementById('halfPortion').checked;
     const notes = document.getElementById('notes').value;
@@ -29,8 +28,7 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
         type: donerType,
         everythingExtra,
         noOnion,
-        lessBread,
-        extraBread,
+        breadAmount,
         extraSauce,
         halfPortion,
         notes
@@ -77,8 +75,8 @@ function updateOrdersList() {
         let specifications = [];
         if (order.everythingExtra) specifications.push('Herşeyi Bol');
         if (order.noOnion) specifications.push('Soğansız');
-        if (order.lessBread) specifications.push('Az Ekmekli');
-        if (order.extraBread) specifications.push('Bol Ekmekli');
+        if (order.breadAmount === 'less') specifications.push('Az Ekmekli');
+        if (order.breadAmount === 'extra') specifications.push('Bol Ekmekli');
         if (order.extraSauce) specifications.push('Bol Soslu');
         if (order.halfPortion) specifications.push('Yarım Döner');
 
@@ -125,8 +123,8 @@ function createOrderSummaryText() {
         let specs = [];
         if (order.everythingExtra) specs.push('Herşeyi Bol');
         if (order.noOnion) specs.push('Soğansız');
-        if (order.lessBread) specs.push('Az Ekmekli');
-        if (order.extraBread) specs.push('Bol Ekmekli');
+        if (order.breadAmount === 'less') specs.push('Az Ekmekli');
+        if (order.breadAmount === 'extra') specs.push('Bol Ekmekli');
         if (order.extraSauce) specs.push('Bol Soslu');
         if (order.halfPortion) specs.push('Yarım Döner');
         
