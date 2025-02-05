@@ -117,19 +117,6 @@ function updateOrdersList() {
 function createOrderSummaryText() {
     let text = "🥙 *Döner Siparişleri*\n\n";
     
-    // Toplam sayıları ekle
-    let chickenCount = 0;
-    let meatCount = 0;
-    orders.forEach(({order, count}) => {
-        if (order.type === 'tavuk') chickenCount += count;
-        else if (order.type === 'et') meatCount += count;
-    });
-    
-    text += `*Toplam Siparişler:*\n`;
-    text += `📍 Tavuk Döner: ${chickenCount}\n`;
-    text += `📍 Et Döner: ${meatCount}\n`;
-    text += `📍 Toplam: ${chickenCount + meatCount}\n\n`;
-    
     // Detaylı sipariş listesi
     text += "*Sipariş Detayları:*\n";
     orders.forEach(({order, count}) => {
@@ -151,6 +138,22 @@ function createOrderSummaryText() {
             text += `\n💬 ${order.notes}`;
         }
     });
+    
+    // Boş satır ekle
+    text += "\n\n";
+    
+    // Toplam sayıları en sona ekle
+    let chickenCount = 0;
+    let meatCount = 0;
+    orders.forEach(({order, count}) => {
+        if (order.type === 'tavuk') chickenCount += count;
+        else if (order.type === 'et') meatCount += count;
+    });
+    
+    text += `*Toplam Siparişler:*\n`;
+    text += `📍 Tavuk Döner: ${chickenCount}\n`;
+    text += `📍 Et Döner: ${meatCount}\n`;
+    text += `📍 Toplam: ${chickenCount + meatCount}`;
 
     return text;
 }
