@@ -113,34 +113,7 @@ function updateOrdersList() {
 
 // WhatsApp paylaşım fonksiyonu
 function createOrderSummaryText() {
-    let text = "🥙 *Döner Siparişleri*\n\n";
-    
-    // Detaylı sipariş listesi
-    text += "*Sipariş Detayları:*\n";
-    orders.forEach(({order, count}) => {
-        text += `\n${count}x ${order.type === 'et' ? 'Et Döner' : 'Tavuk Döner'}`;
-        
-        let specs = [];
-        if (order.everythingExtra) specs.push('Herşeyi Bol');
-        if (order.noOnion) specs.push('Soğansız');
-        if (order.breadAmount === 'less') specs.push('Az Ekmekli');
-        if (order.breadAmount === 'extra') specs.push('Bol Ekmekli');
-        if (order.extraSauce) specs.push('Bol Soslu');
-        if (order.halfPortion) specs.push('Yarım Döner');
-        
-        if (specs.length > 0) {
-            text += `\n➖ ${specs.join(', ')}`;
-        }
-        
-        if (order.notes) {
-            text += `\n💬 ${order.notes}`;
-        }
-    });
-    
-    // Boş satır ekle
-    text += "\n\n";
-    
-    // Toplam sayıları en sona ekle
+    // Toplam sayıları hesapla
     let chickenCount = 0;
     let meatCount = 0;
     orders.forEach(({order, count}) => {
@@ -148,10 +121,31 @@ function createOrderSummaryText() {
         else if (order.type === 'et') meatCount += count;
     });
     
-    text += `*Toplam Siparişler:*\n`;
-    text += `📍 Tavuk Döner: ${chickenCount}\n`;
-    text += `📍 Et Döner: ${meatCount}\n`;
-    text += `📍 Toplam: ${chickenCount + meatCount}`;
+    let text = `SIPARIS LISTESI (Toplam: ${chickenCount + meatCount} | Tavuk: ${chickenCount} | Et: ${meatCount})\n\n`;
+    
+    // Detaylı sipariş listesi
+    orders.forEach(({order, count}) => {
+        text += `${count} ${order.type === 'et' ? 'Et' : 'Tavuk'}`;
+        
+        let specs = [];
+        if (order.everythingExtra) specs.push('Hepsi Bol');
+        if (order.noOnion) specs.push('Sogansiz');
+        if (order.breadAmount === 'less') specs.push('Az Ekmek');
+        if (order.breadAmount === 'extra') specs.push('Bol Ekmek');
+        if (order.extraSauce) specs.push('Bol Sos');
+        if (order.halfPortion) specs.push('Yarim');
+        
+        // Özellikler ve notları birleştir
+        let allSpecs = [...specs];
+        if (order.notes) allSpecs.push(order.notes);
+        
+        // Eğer özellik veya not varsa parantez içinde göster
+        if (allSpecs.length > 0) {
+            text += ` (${allSpecs.join(', ')})`;
+        }
+        
+        text += '\n';
+    });
 
     return text;
 }
