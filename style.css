@@ -161,12 +161,12 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8px;  /* 10px'den küçülttük */
+    padding: 8px;
     border: 2px solid #ddd;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 150px;  /* 200px'den küçülttük */
+    width: 140px;  /* Daha kompakt boyut */
 }
 
 .doner-card:hover {
@@ -175,8 +175,8 @@ button:hover {
 }
 
 .doner-card img {
-    width: 130px;   /* 180px'den küçülttük */
-    height: 130px;  /* 180px'den küçülttük */
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 8px;
@@ -274,6 +274,9 @@ input[type="radio"]:checked + .doner-card {
     padding: 10px;
     background-color: #f8f9fa;
     border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .bread-options .option-label {
@@ -287,9 +290,35 @@ input[type="radio"]:checked + .doner-card {
     display: inline-block;
     margin-right: 15px;
     margin-bottom: 5px;
+    min-width: calc(50% - 10px);
+    margin: 0;
 }
 
 .bread-options input[type="radio"] {
+    margin-right: 5px;
+}
+
+.sauce-options {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.sauce-options .option-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #666;
+}
+
+.sauce-options label {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.sauce-options input[type="radio"] {
     margin-right: 5px;
 }
 
@@ -303,17 +332,26 @@ input[type="radio"]:checked + .doner-card {
     }
 
     .doner-selection {
-        flex-direction: row;  /* column yerine row yaptık */
+        flex-direction: row;
         justify-content: center;
-        gap: 10px;  /* gap'i küçülttük */
+        gap: 8px;  /* Kartlar arası boşluğu azalttık */
+        flex-wrap: wrap;
     }
 
     .doner-card {
-        width: 140px;  /* mobilde biraz daha küçük */
+        width: 110px;  /* Mobilde daha küçük */
     }
 
     .doner-card img {
-        width: 120px;
-        height: 120px;
+        width: 90px;    /* Mobilde daha küçük */
+        height: 90px;   /* Mobilde daha küçük */
+    }
+
+    .doner-name {
+        font-size: 0.9em;  /* Yazı boyutunu küçülttük */
+    }
+
+    .bread-options label {
+        min-width: 100%;
     }
 }

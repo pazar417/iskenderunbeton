@@ -28,6 +28,13 @@
                             <span class="doner-name">Et Döner</span>
                         </label>
                     </div>
+                    <div class="doner-option">
+                        <input type="radio" id="karisik" name="donerType" value="karisik">
+                        <label for="karisik" class="doner-card">
+                            <img src="images/karisik-doner.jpg" alt="Karışık Döner">
+                            <span class="doner-name">Karışık Döner</span>
+                        </label>
+                    </div>
                 </div>
             </div>
 
@@ -51,10 +58,22 @@
                         <label>
                             <input type="radio" name="breadAmount" id="extraBread" value="extra"> Bol Ekmekli
                         </label>
+                        <label>
+                            <input type="radio" name="breadAmount" id="threeLavash" value="threeLavash"> 3 Lavaşlı
+                        </label>
                     </div>
-                    <label>
-                        <input type="checkbox" id="extraSauce"> Bol Soslu
-                    </label>
+                    <div class="sauce-options">
+                        <span class="option-label">Sos Miktarı:</span>
+                        <label>
+                            <input type="radio" name="sauceAmount" id="normalSauce" value="normal" checked> Normal
+                        </label>
+                        <label>
+                            <input type="radio" name="sauceAmount" id="noSauce" value="none"> Sossuz
+                        </label>
+                        <label>
+                            <input type="radio" name="sauceAmount" id="extraSauce" value="extra"> Bol Soslu
+                        </label>
+                    </div>
                     <label>
                         <input type="checkbox" id="halfPortion"> Yarım Döner
                     </label>
